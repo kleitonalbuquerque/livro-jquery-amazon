@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery - Função addClass()</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <style>
+    h3, p {
+      padding: 5px;
+    }
+
+    .destaque {
+      color: red;
+      background-color: #F6D8CE;
+    }
+
+    .manchete {
+      color: green;
+      background-color: #b3ffd6;
+    }
+
+    footer {
+      color: #FFF;
+      background-color: #000;
+      text-align: center;
+      padding: 5px;
+      /* margin-bottom: 20px; */
+    }
+
+    span {
+      font-style: italic;
+    }
+
+    /* img {
+      width: 300px;
+      height: 200px;
+      margin-bottom: 20px;
+    } */
+  </style>
+  <script src="jquery.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('p').addClass('destaque');
+      var possuiDestaque = $('p').hasClass('destaque'); // Função que verifica se tem classe
+
+      if (possuiDestaque)
+        alert('parágrafo possui destaque');
+      else
+        alert('classe destque não detectada');
+
+      // Função que remove a classe do elemento
+      // $('p').on('click', function() {
+      //   $('p').removeClass('destaque');
+      //   alert('classe destaque removida do parágrafo')
+      // });
+
+      // Outra maneira de acionar o evento click
+      // Função que add e remove classe do elemento
+      $('p').click(function () {
+        $(this).toggleClass('destaque');
+      });
+
+      // $('#teste').click(function() {
+      //   $(this).toggleClass('destaque')
+      // });
+      // $('div p').click(function() {
+      //   $(this).toggleClass('manchete');
+      // });
+
+      $('h3').addClass('manchete');
+      $('h3').click(function () {
+        $(this).toggleClass('manchete');
+      });
+
+      // Função que esconde o elemento
+      $('footer').click(function () {
+        $(this).hide();
+      });
+
+      // Função que mostra o elemento
+      $('#button').click(function() {
+        $('footer').show();
+      })
+
+      // Função que modifica o elemento
+      $('#figura').mouseover(function() {
+        $(this).attr('width',450);
+      });
+
+      $('#figura').mouseout(function() {
+        $(this).attr('width',300);
+      })
+    });
+  </script>
+
+</head>
+
+<body class="container">
+  <header>
+    <h1 style="margin-bottom: 20px;">jQuery</h1>
+  </header>
+
+  <main>
+    <h3>Função addClass</h3>
+
+    <p id="teste">A função addClass() permite adicionar uma classe CSS a um determinado elemento.
+      É importante destacar que essa classe deve existir no arquivo CSS ou na seção style, caso
+      contrário a função não terá nenhum efeito.
+    </p>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+    <h3>Função hasClass</h3>
+
+    <p>Essa função hasClass() permite verificar se determindo elemento possui uma classe CSS.</p>
+
+    <h3>Função removeClass</h3>
+
+    <p>A função removeClass() faz exatamente o oposto da função addClass() ou seja, remove uma classe de determinado elemento.</p>
+
+    <h3>Função toggleClass</h3>
+
+    <p>A operação de adicionar e remove classes CSS é algo bem comum no jQuery <small>- minha função preferida</small>.</p>
+
+    <h3>Função hide</h3>
+
+    <p>Esta função esconde/oculta um elemento, com isso, aplica a propriedade "display: none"</p>
+
+    <h3>Função show</h3>
+
+    <p>Esta função show() faz o oposto da função hide(). Ao clicar no botão abaixo ele mostrará o footer caso o mesmo esteja ocultado.</p>
+
+    <input style="margin-bottom: 10px;" id="button" type="button" value="Mostrar footer">
+
+    <h3>Função attr</h3>
+
+    <p>A função attr() permite alterar um atributo de um elemento.</p>
+
+    <img style="margin-bottom: 20px;" src="img/social.jpg" alt="social" id="figura">
+  </main>
+
+  <footer>
+    <span>Desenvolvido por Kleiton 2020</span>
+  </footer>
+</body>
+
+</html>
