@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery</title>
+</head>
+
+<body>
+  <header>
+    <h1>Livro jQuery</h1>
+  </header>
+    <main>
+      <h3>Conteúdo</h3>
+
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+        Nunc id sodales quam. Ut posuere tincidunt posuere. Phasellus vitae felis in nibh tincidunt mollis ac ac libero. 
+        Aliquam varius tellus eget ultrices pulvinar. Mauris massa turpis, eleifend in feugiat nec, efficitur lacinia sapien. 
+        Morbi mollis ligula arcu, at aliquet magna iaculis ornare. Nulla vel vestibulum neque. 
+        Aliquam varius purus ornare enim tincidunt, et lacinia nisl viverra.
+      </p>
+
+      <p>
+        Nullam pulvinar odio sapien, sit amet ultrices purus scelerisque ac. Mauris ornare mi ut neque volutpat, et feugiat nibh suscipit. Pellentesque eu quam eget massa imperdiet congue sed nec enim. 
+        Aliquam nisi nibh, molestie non quam egestas, laoreet accumsan ex. Morbi hendrerit luctus nulla at ultricies. Sed non pulvinar nunc. 
+        Maecenas a luctus est. Quisque egestas eros sed augue auctor, eget auctor velit vehicula. Proin et dignissim urna, vitae scelerisque ligula. Ut bibendum dolor vel vehicula porttitor. 
+        Duis purus lectus, efficitur nec ante nec, elementum euismod massa. Sed ornare sit amet purus id feugiat. Integer quis eros pharetra, sollicitudin risus in, luctus ante. Quisque sit amet erat consectetur, vestibulum erat nec, commodo nunc. 
+        Aenean vel aliquam leo. Mauris sollicitudin augue et suscipit sollicitudin.
+      </p>
+
+      <p>
+        Vivamus neque sapien, efficitur ut ultricies vel, fringilla vitae lacus. Aliquam nec dolor ut diam egestas elementum. Morbi non turpis eros. Nam nulla tellus, molestie in rutrum sed, dapibus sed erat. 
+        Mauris risus nibh, sodales vel finibus a, auctor ut felis. Morbi scelerisque dictum ligula non tincidunt. Nullam imperdiet quam commodo turpis pharetra scelerisque. Sed aliquam arcu in consectetur dapibus. 
+        Duis et nulla lacinia, placerat tellus molestie, vestibulum est. Donec tincidunt tortor eros, ac rhoncus magna euismod malesuada. Vestibulum ultrices tincidunt diam, quis auctor lacus volutpat quis. 
+        Duis feugiat iaculis odio, accumsan accumsan erat.
+      </p>
+    </main>
+    
+    <footer>
+      <div>
+        Desenvolvido por <span>Kleiton</span>
+      </div>
+    </footer>
+
+  <script src="jquery.js"></script>
+  <script>
+    $(document).ready(function() {
+      // alert('versão do jQuery: ' + jQuery().jquery);
+      // alert('versão do jQuery: ' + $().jquery);
+      // alert('jQuery ok!')
+      $('footer div').css({
+        'background-color': 'green',
+        'padding':'5px'
+      });
+      $('footer div span').css({
+        "color": "#FFF",
+        "font-style":"italic"
+      });
+      // alterando mais de uma propriedade CSS com a função css()
+      $('p').css(
+        {
+          "background-color":"#CCC",
+          "border":"2px solid red",
+          "padding":"5px",
+          "text-align":"justify"
+        }
+      );
+      $('p').on('click', function() {
+        alert('click efetuado')
+        var fontSize = $('p').css('font-size');
+        alert('font-size ' + fontSize);
+        $('p').css(
+          {
+            "background-color":"blue",
+            "color":"#FFF"
+          }
+        )
+      })
+    });
+  </script>
+</body>
+
+</html>
