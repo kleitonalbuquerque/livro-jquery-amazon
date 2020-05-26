@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <style>
-    h3, p {
+    h3, h4, p {
       padding: 5px;
     }
 
@@ -70,8 +70,8 @@
       //   $(this).toggleClass('manchete');
       // });
 
-      $('h3').addClass('manchete');
-      $('h3').click(function () {
+      $('h3, h4').addClass('manchete');
+      $('h3, h4').click(function () {
         $(this).toggleClass('manchete');
       });
 
@@ -92,7 +92,29 @@
 
       $('#figura').mouseout(function() {
         $(this).attr('width',300);
+      });
+
+      // Função que copia o texto de uma tag para outra
+      $('#copiar').click(function() {
+        // Salva o conteúdo de p2 em uma variável
+        var p2Texto = $('#p2').text();
+        // Atribui a p1 o conteúdo de p2
+        $('#p1').text(p2Texto);
+      });
+
+      // Função que copia o texto e o html de uma tag para outra
+      $('#copiar2').click(function() {
+        var p4TextoHTML = $('#p4').html();
+        // Atribui a p3 o conteúdo de p4
+        $('#p3').html(p4TextoHTML);
+      });
+
+      // Função val()
+      $('#confirmar').click(function() {
+        var novaCor = $('#nome').val();
+        $('body').css('background-color',novaCor)
       })
+
     });
   </script>
 
@@ -133,13 +155,48 @@
 
     <p>Esta função show() faz o oposto da função hide(). Ao clicar no botão abaixo ele mostrará o footer caso o mesmo esteja ocultado.</p>
 
-    <input style="margin-bottom: 10px;" id="button" type="button" value="Mostrar footer">
-
+    
     <h3>Função attr</h3>
-
+    
     <p>A função attr() permite alterar um atributo de um elemento.</p>
+    
+    <img style="margin-bottom: 20px;" width="300" src="img/social.jpg" alt="social" id="figura">
+    
+    <h3>Modificando o conteúdo</h3>
+    
+    <p>As funções text(), html() e val() permitem obter e alterar o conteúdo de um elemento.</p>
+    
+    <h4>Função text()</h4>
 
-    <img style="margin-bottom: 20px;" src="img/social.jpg" alt="social" id="figura">
+    <p>Esta função permite pegar o texto e somente o texto dentro de uma tag ou colocar um outro texto dentro da mesma.</p>
+
+    <p id="p1">Quisque lorem diam, semper sed interdum vitae, porttitor eget lectus.</p>
+
+    <button id="copiar" style="margin-bottom: 10px;">Copy p2 => p1</button>
+
+    <p id="p2">Fusce a tincidunt <strong>ligula</strong>, eu fermentum eros.</p>
+    
+    <h4>Função html()</h4>
+
+    <p>Similar a função text(), esta função permite copiar tanto o <u>texto</u> contido dentro da tag
+      como também o <u>código html.</u></p>
+
+    <p id="p3">Quisque lorem diam, semper sed interdum vitae, porttitor eget lectus.</p>
+
+    <button id="copiar2" style="margin-bottom: 10px;">Copy p4 => p3</button>
+
+    <p id="p4">Fusce a tincidunt <strong>ligula</strong>, eu fermentum eros.</p>
+    
+    <h4>Função val()</h4>
+
+    <p>A função val() é utilizada para as tags input e select</p>
+
+    <strong>Digite o nome de uma cor ou seu código:</strong>
+    <input type="text" name="nome" id="nome">
+    <button id="confirmar">Aplicar</button><br>
+    <hr>
+
+    <input style="margin-bottom: 10px;margin-top: 10px;" id="button" type="button" value="Mostrar footer">
   </main>
 
   <footer>
