@@ -39,6 +39,10 @@
       height: 200px;
       margin-bottom: 20px;
     } */
+
+    .infobox {
+      
+    }
   </style>
   <script src="jquery.js"></script>
   <script>
@@ -113,8 +117,21 @@
       $('#confirmar').click(function() {
         var novaCor = $('#nome').val();
         $('body').css('background-color',novaCor)
-      })
+      });
 
+      // Função is()
+      // $('exibir').click(function() {
+      //   if($(this).is(':checked')) {
+      //     $(this).show();
+      //   }else {
+      //     $(this).hide();
+      //   }
+      // });
+
+      // Função toggle faz o que a função is() faz com apenas uma linha
+      $('#exibir').click(function() {
+        $(this).toggle();
+      });
     });
   </script>
 
@@ -198,6 +215,14 @@
 
     <label for="favcolor">Selecione uma cor: </label>
     <input type="color" name="favcolor" id="favcolor" value="#ff0000"><br>
+    <hr>
+
+    <h4>Função toggle()</h4>
+
+    <p>Essa função faz em apenas uma linha o que seria necessário fazer com duas ou mais com as 
+      funcões hide() e show().</p>
+
+    <h5 id="exibir" class="infobox">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </h5>
     <hr>
 
     <input style="margin-bottom: 10px;margin-top: 10px;" id="button" type="button" value="Mostrar footer">
