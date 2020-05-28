@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery - Eventos</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <style>
+    h3,
+    h4,
+    p {
+      padding: 5px;
+    }
+
+    .black {
+      background-color: #0000;
+      color: #FFF;
+    }
+
+    .paragrafo:hover {
+      background-color: red;
+    }
+  </style>
+
+  <script src="jquery.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('#botao').click(function () {
+        $('body').toggleClass('black');
+        // alert('O botão foi clicado.');
+      });
+
+      // $('#texto').mouseover(function() {
+      //   $(this).toggleClass('paragrafo');
+      // });
+
+      $('#texto').mouseover(function () {
+        $(this).css({
+          'background-color': 'orange',
+          'color': 'red'
+        });
+        // alert('mouseover')
+      });
+
+      // evento change no select/option
+      $('#foto').hide(); // o hide é para ocultar o elemento quando não estiver selecionado
+      $('#modelos').change(function() {
+        $('#foto').attr('src',$(this).val());
+        $('#foto').show();
+      })
+    });
+  </script>
+
+</head>
+
+<body class="container">
+
+  <header>
+    <h1 style="margin-bottom: 20px;">jQuery</h1>
+  </header>
+  <main>
+    <h3>Tratamento de eventos</h3>
+
+    <h4>Evento click</h4>
+
+    <button id="botao" class="btn btn-primary">Clique aqui!</button>
+    <hr>
+
+    <p>Mauris enim risus, consectetur egestas dui sed, elementum tempor erat.</p>
+    <hr>
+
+    <h4>Evento mouseover</h4>
+
+    <p id="texto">Ocorre quando o usuário passa o cursor do mouse sobre determinado elemento.</p>
+    <!-- <p><span id="texto">Ocorre quando o usuário passa o cursor do mouse sobre determinado elemento.</span></p> -->
+    <hr>
+
+    <h4>Evento change</h4>
+
+    <p>Este eevento pode ser bastante útil para capturarmos o estado de um elemento quando é alterado.</p>
+    <p>O exemplo abaixo ilustra bem isso:</p>
+
+    <label for="">Selecione o modelo de carro:</label>
+    <select name="" id="modelos">
+      <option value="img/bmw.png">--</option>
+      <option value="img/bmw.png">BMW</option>
+      <option value="img/mustang.png">Mustang</option>
+      <option value="img/mclaren.png">McLaren</option>
+    </select>
+
+    <p><img src="" alt="carro" id="foto"></p>
+  </main>
+  <footer></footer>
+</body>
+
+</html>
