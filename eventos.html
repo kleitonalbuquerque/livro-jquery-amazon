@@ -23,6 +23,11 @@
     .paragrafo:hover {
       background-color: red;
     }
+
+    .banana {
+      background-color: coral;
+      color: cornsilk;
+    }
   </style>
 
   <script src="jquery.js"></script>
@@ -37,12 +42,23 @@
       //   $(this).toggleClass('paragrafo');
       // });
 
+      // efeito mouseover
       $('#texto').mouseover(function () {
-        $(this).css({
-          'background-color': 'orange',
-          'color': 'red'
-        });
+        // $(this).css({
+        //   'background-color': 'orange',
+        //   'color': 'red'
+        // });
+
+        // efeito mouseout
+        $(this).addClass('banana');
+        // $(this).mouseout(function() {
+        //   $('#texto').removeClass
+        // })
         // alert('mouseover')
+      });
+
+      $('#texto').mouseout(function() {
+        $(this).removeClass('banana');
       });
 
       // evento change no select/option
@@ -85,7 +101,7 @@
 
     <label for="">Selecione o modelo de carro:</label>
     <select name="" id="modelos">
-      <option value="img/bmw.png">--</option>
+      <option value="">--</option>
       <option value="img/bmw.png">BMW</option>
       <option value="img/mustang.png">Mustang</option>
       <option value="img/mclaren.png">McLaren</option>
